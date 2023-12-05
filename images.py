@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-def size(pixels_xy: list[list[tuple]]) -> tuple:
+def size(pixels_xy: list[list[tuple[int, int, int]]]) -> tuple[int, int]:
     """Devuelve el tamaño de una imagen, dada una lista de listas de pixels.
     Cada elemento del array(pixel) es una tupla, en formato(R, G, B).
     Devuelve una tupla (width, height).
@@ -12,7 +12,7 @@ def size(pixels_xy: list[list[tuple]]) -> tuple:
     return (width, height)
 
 
-def read_img(filename: str) -> list[list[tuple]]:
+def read_img(filename: str) -> list[list[tuple[int, int, int]]]:
     """Lee una imagen de un fichero, y devuelve un array (lista de listas) de pixels.
     Cada elemento del array (pixel) es una tupla, en formato (R, G, B).
     """
@@ -29,7 +29,7 @@ def read_img(filename: str) -> list[list[tuple]]:
     return pixels_xy
 
 
-def write_img(pixels_xy: list[list[tuple]], filename: str) -> None:
+def write_img(pixels_xy: list[list[tuple[int, int, int]]], filename: str) -> None:
     """Escribe un array (lista de listas) de pizels en un fichero
     Cada elemento del array (pixel) es una tupla, en formato (R, G, B).
     """
@@ -44,7 +44,7 @@ def write_img(pixels_xy: list[list[tuple]], filename: str) -> None:
     img.putdata(pixels)
     img.save(filename)
 
-def create_blank(width: int, height: int) -> list[list[tuple]]:
+def create_blank(width: int, height: int) -> list[list[tuple[int, int, int]]]:
     """Crea una imagen vacía, dada una anchura y una altura.
     Devuelve una lista de listas de pixels.
     """
