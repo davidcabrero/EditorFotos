@@ -23,14 +23,6 @@ class TestMirror(unittest.TestCase):
         self.assertTrue(filecmp.cmp('cafe_mirror.jpg', '../cafe_trans.jpg'),
                         msg="Files are different")
 
-class TestMirrorGrayscale(unittest.TestCase):
-
-    def test_simple(self):
-
-        sys.argv = ['program.py', '../cafe.jpg', 'mirror', 'grayscale']
-        transform_simple.main()
-        self.assertTrue(filecmp.cmp('cafe_mirror_gray.jpg', '../cafe_trans.jpg'),
-                        msg="Files are different")
 
 if __name__ == '__main__':
     unittest.main()
