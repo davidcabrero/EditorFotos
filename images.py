@@ -44,6 +44,7 @@ def write_img(pixels_xy: list[list[tuple[int, int, int]]], filename: str) -> Non
     img.putdata(pixels)
     img.save(filename)
 
+
 def create_blank(width: int, height: int) -> list[list[tuple[int, int, int]]]:
     """Crea una imagen vacía, dada una anchura y una altura.
     Devuelve una lista de listas de pixels.
