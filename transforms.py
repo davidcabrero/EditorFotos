@@ -50,7 +50,7 @@ def filter(image: list[list[tuple[int, int, int]]], r: float, g: float, b: float
     image_filter = []
     for column in image:
         new_column = []
-        for pixel in column:
+        for pixel in column: # A cada RGB se asigna el valor multiplicado por el filtro correspondiente y limitando a 255
             new_r = min(int(pixel[0] * r), 255)
             new_g = min(int(pixel[1] * g), 255)
             new_b = min(int(pixel[2] * b), 255)
