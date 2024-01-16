@@ -1,4 +1,4 @@
-from transforms import rotate_right, mirror, blur, greyscale
+from transforms import rotate_right, mirror, blur, grayscale
 from images import read_img, write_img
 import sys
 
@@ -13,8 +13,8 @@ def transform():
         pixels = mirror(pixels)
     elif funcion == "blur":
         pixels = blur()
-    elif funcion == "greyscale":
-        pixels = greyscale()
+    elif funcion == "grayscale":
+        pixels = grayscale(pixels)
     else:
         print("Function not supported")
 
