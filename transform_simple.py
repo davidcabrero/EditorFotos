@@ -16,9 +16,10 @@ def transform():
     elif funcion == "grayscale":
         pixels = grayscale(pixels)
     else:
-        print("Function not supported")
+        print("Función no soportada")
+        sys.exit()
 
-    write_img(pixels, sys.argv[1].split(".")[0] + "_trans.png")
+    write_img(pixels, sys.argv[1].split(".")[0] + "_trans." + sys.argv[1].split(".")[1])
 
 
 def main():
