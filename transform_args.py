@@ -18,7 +18,7 @@ def transform():
     elif funcion == "shift":
         pixels = shift(pixels, int(sys.argv[3]), int(sys.argv[4]))
     elif funcion == "crop":
-        pixels = crop()
+        pixels = crop(pixels, int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]))
     else:
         print("Function not supported")
 

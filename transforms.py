@@ -65,18 +65,24 @@ def shift(image: list[list[tuple[int, int, int]]], horizontal: int, vertical: in
 
     for i in range(rows):
         for j in range(cols):
-            new_i = (i + vertical) % rows  # Desplaza la fila verticalmente sin sobrepasar el final
-            new_j = (j + horizontal) % cols  # Desplaza la columna horizontalmente
+            new_i = (i + vertical) % rows  # Desplaza la fila verticalmente sin sobrepasar el número de filas
+            new_j = (j + horizontal) % cols  # Desplaza la columna horizontalmente sin sobrepasar el número de columnas
 
             image[new_i][new_j] = image[i][j]
-
     return image
 
 
 def crop(image: list[list[tuple[int, int, int]]], x: int, y: int, width: int, height: int) -> list[
     list[tuple[int, int, int]]]:
-    ...
-    return image
+    image_crop = []
+    # Recorre la imagen desde la esquina superior izquierda con la primera fila hasta la última fila según la altura
+    for row in range(y, y + height):
+        new_row = []
+        # Recorre la imagen desde la esquina superior izquierda con la primera columna hasta la última columna según el ancho
+        for col in range(x, x + width):
+            new_row.append(image[row][col])
+        image_crop.append(new_row)
+    return image_crop
 
 
 def blur(image: list[list[tuple[int, int, int]]]) -> list[list[tuple[int, int, int]]]:
