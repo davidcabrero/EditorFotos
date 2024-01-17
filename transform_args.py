@@ -16,7 +16,7 @@ def transform():
     elif funcion == "filter":
         pixels = filter(pixels, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]))
     elif funcion == "shift":
-        pixels = shift()
+        pixels = shift(pixels, int(sys.argv[3]), int(sys.argv[4]))
     elif funcion == "crop":
         pixels = crop()
     else:

@@ -50,7 +50,7 @@ def filter(image: list[list[tuple[int, int, int]]], r: float, g: float, b: float
     image_filter = []
     for column in image:
         new_column = []
-        for pixel in column: # A cada RGB se asigna el valor multiplicado por el filtro correspondiente y limitando a 255
+        for pixel in column:  # A cada RGB se asigna el valor multiplicado por el filtro correspondiente y limitando a 255
             new_r = min(int(pixel[0] * r), 255)
             new_g = min(int(pixel[1] * g), 255)
             new_b = min(int(pixel[2] * b), 255)
@@ -59,15 +59,26 @@ def filter(image: list[list[tuple[int, int, int]]], r: float, g: float, b: float
     return image_filter
 
 
+def shift(image: list[list[tuple[int, int, int]]], horizontal: int, vertical: int) -> list[list[tuple[int, int, int]]]:
+    rows = len(image)  # Cantidad de filas de la imágen
+    cols = len(image[0])  # Cantidad de columnas de píxeles
+
+    for i in range(rows):
+        for j in range(cols):
+            new_i = (i + vertical) % rows  # Desplaza la fila verticalmente sin sobrepasar el final
+            new_j = (j + horizontal) % cols  # Desplaza la columna horizontalmente
+
+            image[new_i][new_j] = image[i][j]
+
+    return image
+
+
+def crop(image: list[list[tuple[int, int, int]]], x: int, y: int, width: int, height: int) -> list[
+    list[tuple[int, int, int]]]:
+    ...
+    return image
+
+
 def blur(image: list[list[tuple[int, int, int]]]) -> list[list[tuple[int, int, int]]]:
     ...
-
-
-def shift():
-    ...
-
-
-def crop():
-    ...
-
-
+    return image

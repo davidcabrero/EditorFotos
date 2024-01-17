@@ -9,7 +9,8 @@ def transform():
     # Obtener todas las funciones y argumentos
     funcs_args = sys.argv[2:]
 
-    for i in range(0, len(funcs_args), 2): # Iterar de 2 en 2 para obtener funciones y argumentos multiples en cualquier orden
+    for i in range(0, len(funcs_args), 2):
+        # Iterar de 2 en 2 para obtener funciones y argumentos multiples en cualquier orden
 
         func = funcs_args[i]
         args = funcs_args[i + 1:]
