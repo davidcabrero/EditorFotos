@@ -12,7 +12,7 @@ def transform():
     elif funcion == "mirror":
         pixels = mirror(pixels)
     elif funcion == "blur":
-        pixels = blur()
+        pixels = blur(pixels)
     elif funcion == "grayscale":
         pixels = grayscale(pixels)
     else:

@@ -24,7 +24,7 @@ def transform():
         elif func == "mirror":
             pixels = mirror(pixels)
         elif func == "blur":
-            pixels = blur(pixels, *args)
+            pixels = blur(pixels)
         elif func == "grayscale":
             pixels = grayscale(pixels)
         elif func == "filter":
